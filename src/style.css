@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.button {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100px;
+  height: 50px;
+  border: 2px solib black;
+  background-color: gray;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
