@@ -1,5 +1,7 @@
 # Phaser with React and React-Router
-React-Router gives us the posibillity to specify routes that are trigerred, based on URL.
+React-Router simplifies application updating after URL changes.  
+But to use it with Phaser some precautions need to be made, they are explained further in the readme.
+Below is an example of how React-Router configuration looks like.  
 
 ```
 <Router history={this.history} >
@@ -13,19 +15,18 @@ React-Router gives us the posibillity to specify routes that are trigerred, base
   </Switch>
 </Router>
 ```
-You are then able to specify scenes that do not explicitly need Phaser.  
-LogIn page is a great example.  
-Two input fields with submit button is a piece of cake in React.  
-  
-As for the scenes that use Phaser.
+Combined with Phaser this allows us to update Phaser states/scenes according to URL or route to scenes that don't use Phaser at all.  
+LogIn page would be a great example, two input fields with submit button is a piece of cake in React.  
+When it comes to Phaser/React scenes shouldComponentUpdate() should always return false.  
+
 ```
 public shouldComponentUpdate(): boolean {
   return false;
 }
 ```
-Is a need.
 
-Only thing missing is a place to hook up phaser canvas.
+Otherwise React might restart Phaser occasionaly.
+The only thing missing is a place to hook up phaser canvas.
 
 ```
 public render(): JSX.Element {
