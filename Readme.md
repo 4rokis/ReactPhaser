@@ -15,7 +15,8 @@ Below is an example of how React-Router configuration looks like.
   </Switch>
 </Router>
 ```
-Combined with Phaser, this allows us to update Phaser states/scenes according to URL or route to scenes that don't use Phaser at all.  
+Combined with Phaser, this allows us to update Phaser states/scenes according to URL  
+or route to scenes that don't use Phaser at all.  
 LogIn page would be a great example, two input fields with submit button is a piece of cake in React.  
 When it comes to Phaser/React scenes shouldComponentUpdate() should always return false.  
 
@@ -67,17 +68,17 @@ public componentWillReceiveProps(nextProps: Props): void {
 ```
 
 ## How to use the example
-To install, build and start the example execute these commands:
+1. Execute:  
 
 ```shell
-npm install
-npm run build
-npm run start
+npm install && npm run build && npm run start
 ```
-When the example is started, go to http://0.0.0.0:8080/ . Use the SWITCH button to switch between scenes.
 
-##Check us on social pages!  
-https://www.instagram.com/aegerinteractive/
+2. Go to http://localhost:8080/
+3. Use the SWITCH button to switch between scenes.
+
+## Check us on social pages!  
+https://www.instagram.com/aegerinteractive/  
 https://www.facebook.com/AegerInteractive/  
 https://twitter.com/AegerInteracti1  
 https://twitter.com/54n60w3n  
