@@ -1,6 +1,6 @@
 # Phaser with React and React-Router
-React-Router simplifies application updating after URL changes.  
-But to use it with Phaser some precautions need to be made, they are explained further in the readme.
+React-Router simplifies application updating after URL changes.    
+But to use it with Phaser some precautions need to be made, they are explained further in the readme.  
 Below is an example of how React-Router configuration looks like.  
 
 ```
@@ -15,7 +15,8 @@ Below is an example of how React-Router configuration looks like.
   </Switch>
 </Router>
 ```
-Combined with Phaser this allows us to update Phaser states/scenes according to URL or route to scenes that don't use Phaser at all.  
+Combined with Phaser this allows us to update Phaser states/scenes  
+according to URL or route to scenes that don't use Phaser at all.  
 LogIn page would be a great example, two input fields with submit button is a piece of cake in React.  
 When it comes to Phaser/React scenes shouldComponentUpdate() should always return false.  
 
@@ -25,8 +26,9 @@ public shouldComponentUpdate(): boolean {
 }
 ```
 
-Otherwise React might restart Phaser occasionaly.
-The only thing missing is a place to hook up phaser canvas.
+Otherwise React might restart Phaser occasionaly.  
+  
+The only thing missing is a place to hook up phaser canvas.  
 
 ```
 public render(): JSX.Element {
@@ -38,6 +40,15 @@ public render(): JSX.Element {
 }
 ```
 This simple div with reference does the trick!  
+Just set it to Phaser parent property.
+```
+new Phaser.Game({
+  type: Phaser.AUTO,
+  width: WIDTH,
+  height: HEIGHT,
+  parent: this.gameRoot,
+});
+```
   
 Now you have a fully working Phaser with React and React-Router! Congratulations!  
   
